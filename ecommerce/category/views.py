@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
+from .models import Category
 
 
 def all(request):
-    return render(request,"category/all.html")
+    context = {
+        "title":"Home Page",
+        "cats":Category.objects.all()
+        }
+    return render(request,"category/all.html",context)
 
 def create(request):
     return render(request,"category/create.html")

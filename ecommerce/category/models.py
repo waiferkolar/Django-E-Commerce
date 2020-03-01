@@ -1,6 +1,8 @@
 from django.db import models
 import datetime
 
-class Category(models.Model):
-    name = models.CharField(max_length=225)
-    created_at = models.DateTimeField(auto_now_add=True)
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.IntegerField()
+    image = models.ImageField()
+    create_at = models.DateTimeField(auto_now_add=True)
